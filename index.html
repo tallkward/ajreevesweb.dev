@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AJ Reeves | Web Developer</title>
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Stylesheet --> 
+    <link href="style.css" rel="stylesheet">
+
+
+</head>
+<body class="font-ubuntu bg-black text-gray-300 overflow-x-hidden">
+
+  <!-- Navbar -->
+<nav id="navbar" class="fixed top-0 left-0 w-full bg-black bg-opacity-90 shadow-lg z-50 transition duration-300">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+        <a href="#top-section" class="text-xl text-white font-orbitron">A.J. Reeves | Web Developer</a>
+<button id="hamburger-button" class="sm:block md:hidden">
+    <i class="fas fa-bars"></i>
+</button>
+        <div id="menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-4 md:mt-0">
+            <a href="#top-section" class="text-indigo-400 hover:text-indigo-300 transition">Home</a>
+            <a href="#about-section" class="text-indigo-400 hover:text-indigo-300 transition">About</a>
+            <a href="#work-section" class="text-indigo-400 hover:text-indigo-300 transition">Work</a>
+            <a href="#github-section" class="text-indigo-400 hover:text-indigo-300 transition">GitHub</a>
+            <a href="#contact-section" class="text-indigo-400 hover:text-indigo-300 transition">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // JavaScript to toggle the mobile menu visibility
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const menu = document.getElementById('menu');
+
+    // Function to toggle menu visibility only on mobile
+    const toggleMenu = () => {
+        if (window.innerWidth < 768) { // Check if the screen is in mobile mode
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+    };
+
+    hamburgerButton.addEventListener('click', toggleMenu);
+
+    // Reset menu state on window resize to avoid stale states on desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            menu.classList.add('hidden'); // Ensure menu is hidden on desktop view
+            menu.classList.remove('flex'); // Remove flex to avoid any conflicting states
+        }
+    });
+</script>
+
+
+
+    <!-- Top Section with Rocket Animation -->
+    <section id="top-section" class="relative flex items-center justify-center min-h-screen bg-cover bg-fixed bg-center" style="background-image: url('bgup.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="z-10 text-center">
+            <img src="rocket.png" alt="Rocket" class="rocket w-24 mx-auto" id="rocket">
+            <h1 class="text-5xl text-yellow-500 font-orbitron mt-4 mb-2">Concept -> Code -> Cosmos</h1>
+            <p class="text-lg mb-6">Creative solutions put into practice that are built to last.</p>
+            <button class="bg-blue-800 text-white px-6 py-2 rounded-lg shadow-md transition transform hover:scale-105 animate-pulse" id="scroll-button">
+                Lift Off <i class="fas fa-arrow-up ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section" class="relative min-h-screen flex items-center justify-center bg-cover bg-fixed bg-center py-12" style="background-image: url('about.jpg');">
+         <div class="container mx-auto text-center max-w-2xl bg-black bg-opacity-90 p-8 rounded-lg shadow-md">
+        <h2 class="text-4xl text-yellow-500 font-orbitron mb-4">About Me</h2>
+        <p>Hi, I'm <strong>A.J. Reeves</strong>, a front-end developer dedicated to building dynamic, user-focused web applications. My work combines aesthetic appeal with seamless functionality, always striving for exceptional user experiences.</p>
+        <p>With a strong foundation in web development principles, I'm also CompTIA Security+ certified, giving me insights into building secure applications that protect user data.</p>
+        <p>Though front-end development is my primary focus, I'm skilled with back-end tools like Node.js, Express, and MongoDB. I enjoy working on full-stack projects that challenge me to build efficient and secure applications from the ground up.</p>
+        <p>Beyond coding, my life is enriched by martial arts, chess and drumming. This discipline has taught me resilience, strategic thinking, creativity, and the importance of continuous learning, all of which I bring to my development work.</p>
+        <i class="fas fa-arrow-down text-indigo-400 text-3xl mt-8 cursor-pointer animate-pulse" onclick="smoothScroll('#work-section')"></i>
+    </div>
+    </section>
+
+    <!-- Work Section -->
+   <section id="work-section" class="relative min-h-screen flex flex-col items-center justify-center bg-cover bg-fixed bg-center py-12" style="background-image: url('works.jpg');">
+    <div class="container mx-auto text-center max-w-5xl">
+        <h2 class="text-4xl text-yellow-500 font-orbitron mb-8">My Work</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Project Cards -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col text-left hover:scale-105 transition transform h-full">
+                <h3 class="text-xl text-indigo-400 mb-4">New Balance <i class="fas fa-code"></i></h3>
+                
+                <!-- Technologies Section -->
+                <div class="bg-gray-700 p-4 rounded mb-4">
+                    <p class="text-sm text-gray-300 uppercase tracking-wider mb-2 font-semibold">Technologies Used</p>
+                    <p class="text-indigo-200">HTML, CSS, JavaScript, Zurb Foundation</p>
+                </div>
+                
+                <!-- Description Section -->
+                <div class="bg-gray-700 p-4 rounded flex-grow">
+                    <p class="text-gray-300 mb-2">As a front-end intern at <a href="https://www.newbalance.com" class="underline text-blue-400" target="_blank">New Balance</a>, I worked on enhancing the user experience across the company's e-commerce platform.</p>
+                    <p class="text-gray-400 text-sm">I implemented responsive design adjustments, optimized page load speeds, and improved overall site accessibility, gaining valuable experience in a fast-paced, team-oriented environment.</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col text-left hover:scale-105 transition transform h-full">
+                <h3 class="text-xl text-indigo-400 mb-4">Infinity Skateshop <i class="fas fa-mobile-alt"></i></h3>
+                
+                <!-- Technologies Section -->
+                <div class="bg-gray-700 p-4 rounded mb-4">
+                    <p class="text-sm text-gray-300 uppercase tracking-wider mb-2 font-semibold">Technologies Used</p>
+                    <p class="text-indigo-200">HTML, CSS, JavaScript, Bootstrap</p>
+                </div>
+                
+                <!-- Description Section -->
+                <div class="bg-gray-700 p-4 rounded flex-grow">
+                    <p class="text-gray-300 mb-2">Designed a mobile-first site for <a href="https://infinityskateshop.com" class="underline text-blue-400" target="_blank">Infinity Skateshop</a> with a focus on clean, intuitive navigation and responsive product galleries.</p>
+                    <p class="text-gray-400 text-sm">This project solidified my skills in Bootstrap and taught me the importance of user-centric design for e-commerce sites.</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col text-left hover:scale-105 transition transform h-full">
+                <h3 class="text-xl text-indigo-400 mb-4">Insequence Inc. <i class="fas fa-database"></i></h3>
+                
+                <!-- Technologies Section -->
+                <div class="bg-gray-700 p-4 rounded mb-4">
+                    <p class="text-sm text-gray-300 uppercase tracking-wider mb-2 font-semibold">Technologies Used</p>
+                    <p class="text-indigo-200">React.js, JavaScript, Sequelize, Bootstrap, Node.JS, NPM, NVM, Git, Windows Server, Various Cybersecurity Functions, Various Sys Admin Functions.</p>
+                </div>
+                
+                <!-- Description Section -->
+                <div class="bg-gray-700 p-4 rounded flex-grow">
+                    <p class="text-gray-300 mb-2">At <a href="https://insequenceinc.com" class="underline text-blue-400" target="_blank">Insequence Inc.</a>, I contributed to large-scale applications, focusing on data handling and creating interactive dashboards.</p>
+                    <p class="text-gray-400 text-sm">This experience reinforced my proficiency with React and highlighted the importance of modular, scalable code for enterprise applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        <i class="fas fa-arrow-down text-indigo-400 text-3xl mt-8 cursor-pointer animate-pulse" onclick="smoothScroll('#contact-section')"></i>
+    </section>
+
+    <!-- GitHub Activity Section -->
+    <section id="github-section" class="relative min-h-screen flex items-center justify-center bg-cover bg-fixed bg-center py-12" style="background-image: url('github-pattern.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+        <div class="container mx-auto text-center max-w-4xl z-10 relative">
+            <h2 class="text-4xl text-yellow-500 font-orbitron mb-8">What I'm Working On</h2>
+            <div id="github-activity" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- GitHub activity will be populated here -->
+                <div class="col-span-1 md:col-span-2 flex justify-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+                </div>
+            </div>
+        </div>
+        <i class="fas fa-arrow-down text-indigo-400 text-3xl mt-8 cursor-pointer animate-pulse z-10 relative" onclick="smoothScroll('#contact-section')"></i>
+    </section>
+
+    <!-- Contact Section with Particles -->
+    <section id="contact-section" class="relative min-h-screen flex items-center justify-center bg-cover bg-fixed bg-center bg-gray-900 text-gray-300 py-12" style="background-image: url('contact-background.jpg');">
+        <div id="particles-js" class="absolute inset-0"></div>
+        <div class="container mx-auto text-center max-w-md z-10 relative">
+            <h2 class="text-4xl text-yellow-500 font-orbitron mb-8">Contact Me</h2>
+            <p class="text-lg mb-8">Feel free to reach out!</p>
+            <ul class="space-y-4">
+                <li><i class="fas fa-envelope text-indigo-400 mr-2"></i> <span>Email:</span> <a href="mailto:ajreeves.pro@gmail.com" class="text-blue-400 underline">ajreeves@example.com</a></li>
+                <li><i class="fab fa-linkedin text-indigo-400 mr-2"></i> <span>LinkedIn:</span> <a href="https://www.linkedin.com/in/aj-reeves-aa80a612b" class="text-blue-400 underline">linkedin.com/in/ajreeves</a></li>
+               <!--  <li><i class="fab fa-github text-indigo-400 mr-2"></i> <span>GitHub:</span> <a href="https://github.com/ajreeves6" class="text-blue-400 underline">github.com/ajreeves</a></li>
+            </ul> -->
+        </div>
+    </section>
+
+    <!-- Smooth Scroll Script and ParticlesJS Initialization -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Smooth Scroll Function
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Update navigation links to use smooth scroll
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href');
+                smoothScroll(target);
+            });
+        });
+
+        // GitHub Activity Fetch Function
+        async function fetchGitHubActivity() {
+            try {
+                const response = await fetch('https://api.github.com/users/tallkward/events');
+                const data = await response.json();
+                const activityContainer = document.getElementById('github-activity');
+                
+                // Process and display the first 4 events
+                for (const event of data.slice(0, 4)) {
+                    const eventDate = new Date(event.created_at).toLocaleDateString();
+                    let eventDescription = '';
+                    let repoUrl = '';
+                    
+                    switch(event.type) {
+                        case 'PushEvent':
+                            eventDescription = `Pushed to ${event.repo.name}`;
+                            repoUrl = `https://github.com/${event.repo.name}`;
+                            break;
+                        case 'CreateEvent':
+                            eventDescription = `Created ${event.repo.name}`;
+                            repoUrl = `https://github.com/${event.repo.name}`;
+                            break;
+                        case 'ForkEvent':
+                            eventDescription = `Forked ${event.repo.name}`;
+                            repoUrl = `https://github.com/${event.repo.name}`;
+                            break;
+                        default:
+                            eventDescription = `Activity on ${event.repo.name}`;
+                            repoUrl = `https://github.com/${event.repo.name}`;
+                    }
+
+                    // Fetch repository details including description
+                    const repoResponse = await fetch(`https://api.github.com/repos/${event.repo.name}`);
+                    const repoData = await repoResponse.json();
+                    const description = repoData.description || 'No description available';
+                    
+                    const eventCard = document.createElement('div');
+                    eventCard.className = 'bg-gray-800 rounded-lg shadow-lg p-6 text-left hover:scale-105 transition transform';
+                    eventCard.innerHTML = `
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-github text-indigo-400 text-2xl mr-3"></i>
+                            <h3 class="text-xl text-indigo-400">${eventDescription}</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">${eventDate}</p>
+                        <div class="bg-gray-700 p-4 rounded">
+                            <p class="text-gray-300 description-text">${description}</p>
+                        </div>
+                        <a href="${repoUrl}" target="_blank" class="inline-block mt-4 text-blue-400 hover:text-blue-300">
+                            View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    `;
+                    activityContainer.appendChild(eventCard);
+                }
+            } catch (error) {
+                console.error('Error fetching GitHub activity:', error);
+            }
+        }
+
+        // Fetch GitHub activity when the page loads
+        document.addEventListener('DOMContentLoaded', fetchGitHubActivity);
+
+        document.getElementById('scroll-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('rocket').classList.add('fly-off');
+            setTimeout(() => smoothScroll('#about-section'), 1000);
+        });
+
+        // Initialize Particles.js in the Contact Section
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 2, direction: "none" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 1 } } }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+ :root {
+        --main-bg-color: #000;
+        --text-color-light: #e0e3f3;
+        --accent-blue: #9cb3ff;
+        --accent-blue-bright: #00c8ff;
+        --deep-blue: #343aeb;
+        --hover-blue: #5561e1;
+        --highlight-text: #ffe600;
+    }
+
+    html, body {
+    overflow-x: hidden;
+}
+
+    /* Font Style Overrides */
+    h1, h2 {
+        font-family: 'Orbitron', sans-serif;
+    }
+    body {
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    /* Rocket Fly-Off Animation */
+    @keyframes fly-off {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        100% { transform: translate(100vw, -100vh) rotate(-25deg); opacity: 0; }
+    }
+
+    /* Background Diagonal Movement */
+    @keyframes diagonalBackgroundMove {
+        0% { background-position: bottom left; }
+        50% { background-position: top right; }
+        100% { background-position: bottom left; }
+    }
+
+    /* Fade-In Up Animation */
+    @keyframes fadeInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Top Section Background Animation */
+    #top-section {
+        animation: diagonalBackgroundMove 45s ease-in-out infinite;
+    }
+    
+    /* Rocket Fly-Off */
+    .rocket.fly-off {
+        animation: fly-off 1.5s ease-in forwards;
+    }
+
+    /* Fade In Animation for Headings */
+    h1, h2 {
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Equal Height for Cards */
+    .grid > div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    /* Card Content Styles */
+    .bg-gray-700 {
+        background-color: #374151;
+    }
+
+    /* Project Card Styling */
+    .project-card {
+        background-color: #1f2937;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s;
+        text-align: left;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05);
+    }
+
+    /* Technologies Section */
+    .tech-section {
+        background-color: #374151;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .tech-section p {
+        color: #9ca3af;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .tech-used {
+        color: #818cf8;
+        font-size: 1rem;
+    }
+
+    /* Description Section */
+    .desc-section {
+        background-color: #374151;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        flex-grow: 1;
+    }
+
+    .desc-section p {
+        margin-bottom: 0.5rem;
+        color: #d1d5db;
+    }
+
+    .desc-details {
+        color: #9ca3af;
+        font-size: 0.875rem;
+    }
+
+.container {
+    overflow-hidden;
+}
+
+/* Font Families */
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.font-ubuntu {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Rocket Animation */
+.rocket {
+    transition: transform 1s ease-in-out;
+}
+
+.fly-off {
+    transform: translateY(-1000px) rotate(10deg);
+}
+
+/* GitHub Section Styles */
+#github-section {
+    position: relative;
+    overflow: hidden;
+}
+
+#github-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.7) 0%, rgba(17, 24, 39, 0.9) 100%);
+    z-index: 1;
+}
+
+#github-activity .bg-gray-800 {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+#github-activity .bg-gray-800:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px -5px rgba(66, 153, 225, 0.1), 0 10px 10px -5px rgba(66, 153, 225, 0.04);
+    border-left: 4px solid #667eea;
+}
+
+.description-text {
+    line-height: 1.6;
+}
+
+.loading-spinner {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #667eea;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
